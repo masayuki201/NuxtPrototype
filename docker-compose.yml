@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  playwrite:
+    build:
+      context: .
+      dockerfile: ./docker/playwrite/Dockerfile
+    tty: true
+    volumes:
+      - ./:/var/www/app
+    ports:
+      - "3000:3000"
