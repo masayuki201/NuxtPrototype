@@ -11,6 +11,11 @@ const enableCustomLayout = () => {
   route.meta.layout = 'custom';
 };
 
+const show = ref(false);
+
+const handleClick = () => {
+  show.value = true;
+};
 </script>
 
 <template>
@@ -28,6 +33,12 @@ const enableCustomLayout = () => {
     <div>
       <button @click="enableCustomLayout">Update layout</button>
     </div>
+
+    <div>
+      <button @click="handleClick">Coupon Get</button>
+      <LazyCoupon v-if="show" />
+    </div>
+
     <Advertisement />
   </div>
 </template>
