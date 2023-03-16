@@ -1,6 +1,16 @@
 <script setup lang="ts">
-const { fetchArticles, articles } = useArticles();
-fetchArticles();
+// 旧実装
+// const { fetchArticles, articles } = useArticles();
+// fetchArticles();
+
+// useFetch($fetch)利用
+const { data: articles, refresh } = await useFetch('/api/blogs');
+
+const route = useRoute();
+const enableCustomLayout = () => {
+  route.meta.layout = 'custom';
+};
+
 </script>
 
 <template>
@@ -9,10 +19,15 @@ fetchArticles();
     <ul>
       <li v-for="article in articles" :key="article.id">
         <NuxtLink :to="{path: '/details', query: { id:article.id }}">
-          {{article.title }}
         </NuxtLink>
       </li>
     </ul>
+    <!-- データ更新処理 -->
+    <button @click="refresh">最新情報取得</button>
+    <!-- レイアウト変更 -->
+    <div>
+      <button @click="enableCustomLayout">Update layout</button>
+    </div>
     <Advertisement />
   </div>
 </template>
