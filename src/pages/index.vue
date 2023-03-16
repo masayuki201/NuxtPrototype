@@ -20,6 +20,9 @@ const handleClick = () => {
 
 <template>
   <div>
+    <div>
+      <img src="~/assets/image002.jpg" alt="Sunset Icon" />
+    </div>
     <p>新着記事！！</p>
     <ul>
       <li v-for="article in articles" :key="article.id">
