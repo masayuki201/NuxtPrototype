@@ -16,6 +16,11 @@ const show = ref(false);
 const handleClick = () => {
   show.value = true;
 };
+const { count, inc, dec } = useCounter(100);
+
+const { $hello } = useNuxtApp();
+
+
 </script>
 
 <template>
@@ -41,6 +46,17 @@ const handleClick = () => {
       <button @click="handleClick">Coupon Get</button>
       <LazyCoupon v-if="show" />
     </div>
+
+    <div>Count:{{ count }}</div>
+    <div>
+      <button @click="() => inc()">+</button>
+      <button @click="() => dec()">-</button>
+    </div>
+
+    <div>
+      <h2>{{ $hello('World') }}</h2>
+    </div>
+
 
     <Advertisement />
   </div>
