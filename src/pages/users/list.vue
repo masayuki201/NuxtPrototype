@@ -1,11 +1,19 @@
 <script setup lang="ts">
-
+const counter = ref(0);
+const inc = () => {
+  throw createError('エラー発生');
+  counter.value++;
+};
 </script>
 
 <template>
-  <h1>User Listページ</h1>
+  <div>
+    <h1>ユーザリスト</h1>
+    <h2>Counter</h2>
+    <p>Count: {{ counter }}</p>
+    <div><button @click="inc">+</button></div>
+  </div>
 </template>
-
 <style scoped>
 
 </style>
