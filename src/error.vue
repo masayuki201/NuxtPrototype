@@ -4,7 +4,7 @@ const error = useError();
 
 <template>
   <NuxtLayout>
-    <p>{{ error }}だよ</p>
+    <p>{{ error }}</p>
+    <button @click="clearError">Clear Error</button>
   </NuxtLayout>
 </template>
-
