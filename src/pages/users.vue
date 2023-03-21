@@ -14,14 +14,17 @@ const someErrorLogger = (error) => {
 
 <template>
   <div>
+<!--    <h1>Usersページ</h1>-->
+<!--    <NuxtErrorBoundary @error="someErrorLogger">-->
+<!--      <NuxtPage />-->
+<!--      <template #error="{ error }">-->
+<!--        <p>{{ error }}</p>-->
+<!--        <button @click="resetError(error)">Clear Error</button>-->
+<!--      </template>-->
+<!--    </NuxtErrorBoundary>-->
     <h1>Usersページ</h1>
-    <NuxtErrorBoundary @error="someErrorLogger">
       <NuxtPage />
-      <template #error="{ error }">
-        <p>{{ error }}</p>
-        <button @click="resetError(error)">Clear Error</button>
-      </template>
-    </NuxtErrorBoundary>
+
   </div>
 </template>
 
